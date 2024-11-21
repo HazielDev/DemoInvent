@@ -1,0 +1,53 @@
+nav{
+    width: 100%;
+}
+
+#franjaNav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    height: 30px;
+    width: 100%;
+    background-color: var(--main);
+}
+
+.navContent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navLink{
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navLink::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 1px;
+    width: 0%;
+    background-color: #fff;
+    transition: all 0.1s ease-in;
+}
+
+.navLink:hover::after{
+    width: 100%;
+}
+
+#carBtn{
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 1.3rem;
+}
