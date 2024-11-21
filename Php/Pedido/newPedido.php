@@ -13,6 +13,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $cant = 1;
     $nombreProd = $_POST['nombre'];
     $prodPrecio = $_POST['precio'];
+
+    $descontMaterial = $conn->prepare("UPDATE Producto SET numStock = numStock - 1 WHERE id = ?");
+    $descontMaterial->bind_param("i",$idProd);
+    $descontMaterial->execute();
+
     date_default_timezone_set('America/Mexico_City');
     $fechaHora = date('Y-m-d H:i:s');
     $prodList = '[{"id":'.$idProd.',"cant":1}]';
